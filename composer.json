@@ -1,0 +1,13 @@
+{
+    "name": "florientr/laravel-admin-menu",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "laravel/laravel": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Florientr\\AdminMenuServiceProvider\\": "src/"
+        }
+    }
+}
