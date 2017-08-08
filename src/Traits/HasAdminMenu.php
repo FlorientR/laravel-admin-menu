@@ -8,7 +8,7 @@ trait HasAdminMenu
 	{
 		if ($this->adminMenuConfig != null)
 		{
-
+			return views(config('admin_menu.tempalte'));
 		}
 	}
 }
