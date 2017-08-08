@@ -1,4 +1,4 @@
-@php(session(['adminmenu_include' => false]))
+@php(session()->flash('adminmenu_include', true))
 @endphp
 
 @section('adminmenu_stylesheets')

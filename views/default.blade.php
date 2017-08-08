@@ -1,4 +1,4 @@
-@includeWhen(session('adminmenu_include', true), 'vendor.admin_menu.include')
+@includeWhen(!session()->flash('adminmenu_include'), 'vendor.admin_menu.include')
 
 @if (!empty($menu) && is_array($menu))
     <ul class="adminmenu_list">
