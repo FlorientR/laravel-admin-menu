@@ -8,6 +8,8 @@ class AdminMenuServiceProvider extends ServiceProvider
 {
 	public function boot()
 	{
+		session()->forget('adminmenu_included');
+
 		$this->publishes([
 			__DIR__.'/../config/admin_menu.php' => config_path().'/admin_menu.php',
 		], 'config');

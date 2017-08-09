@@ -1,5 +1,3 @@
-@includeWhen(!session()->flash('adminmenu_include'), 'vendor.admin_menu.include')
-
 @if (!empty($menu) && is_array($menu))
     <ul class="adminmenu_list">
         @foreach ($menu as $actionName => $action)

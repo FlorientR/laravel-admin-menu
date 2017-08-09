@@ -15,6 +15,14 @@ trait HasAdminMenu
 		return config('admin_menu.template');
 	}
 
+	public function getAdminMenuInclude($menu = null)
+	{
+		if ($menu != null && !empty($menu['include']))
+			return $menu['include'];
+
+		return config('admin_menu.include');
+	}
+
 	public function hasAdminMenu()
 	{
 		return $this->adminMenuConfig() != false;
@@ -49,6 +57,12 @@ trait HasAdminMenu
 
 				if (!empty($menu[$actionName]['route']) && Route::has($menu[$actionName]['route']))
 					$menu[$actionName]['route'] = route($menu[$actionName]['route'], $actionParams);
+			}
+
+			if (!session('adminmenu_included'))
+			{
+				echo view($this->getAdminMenuInclude($menu));
+				session(['adminmenu_included' => true]);
 			}
 
 			echo view($this->getAdminMenuTemplate($menu), compact('menu'));
