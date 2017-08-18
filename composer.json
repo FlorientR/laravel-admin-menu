@@ -3,7 +3,7 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "laravel/laravel": "^5.4"
+        "laravel/framework": "^5.4"
     },
     "autoload": {
         "psr-4": {
