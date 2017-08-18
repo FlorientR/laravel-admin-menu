@@ -17,7 +17,7 @@ trait HasAdminMenu
 
 	public function hasAdminMenu()
 	{
-		return $this->adminMenuConfig() != false;
+		return method_exists($this, 'adminMenuConfig');
 	}
 
 	public function printAdminMenu($params = [], $menuName = 'default')
