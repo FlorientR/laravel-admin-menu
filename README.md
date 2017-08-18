@@ -1,7 +1,7 @@
 # laravel-admin-menu
 Manage actions on models
 
-`composer install florientr/laravel-admin-menu`
+`composer require florientr/laravel-admin-menu`
 
 `Florientr\AdminMenu\AdminMenuServiceProvider::class,`
 
