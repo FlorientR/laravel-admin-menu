@@ -43,7 +43,7 @@ return [
 			'icon' => 'fa fa-pencil',
 			'route' => 'item.edit',
 		],
-		'delete_editor' => [
+		'delete_item' => [
 			'label' => 'Delete',
 			'title' => 'Delete item',
 			'permissions' => 'delete item',
@@ -73,10 +73,14 @@ public function adminMenuConfig()
 	return [
 		'default' => [
 			'edit_item' => [
-				'item' => $this->id
+				'route_params' => [
+					'item' => $this->id,
+				 ]
 			],
 			'delete_item' => [
-				'item' => $this->id
+				'route_params' => [
+				 	'item' => $this->id,
+				 ]
 			]
 		]
 	];

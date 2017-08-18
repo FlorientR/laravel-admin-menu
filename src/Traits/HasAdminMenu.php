@@ -43,10 +43,16 @@ trait HasAdminMenu
 				if (empty($actionParams))
 					$actionParams = [];
 
-				$menu[$actionName]['params'] = $actionParams;
+				if (!empty($params[$actionName]))
+					$actionParams = array_merge($actionParams, $params[$actionName]);
+
+				$menu[$actionName] = array_merge($menu[$actionName], $actionParams);
+
+				if (empty($menu[$actionName]['route_params']))
+					$menu[$actionName]['route_params'] = [];
 
 				if (!empty($menu[$actionName]['route']) && Route::has($menu[$actionName]['route']))
-					$menu[$actionName]['route'] = route($menu[$actionName]['route'], $actionParams);
+					$menu[$actionName]['route'] = route($menu[$actionName]['route'], $menu[$actionName]['route_params']);
 			}
 
 			echo view($this->getAdminMenuTemplate($menu), compact('menu'));
