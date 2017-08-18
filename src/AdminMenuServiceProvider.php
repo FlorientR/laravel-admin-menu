@@ -17,8 +17,8 @@ class AdminMenuServiceProvider extends ServiceProvider
 		], 'views');
 
 		$this->publishes([
-			__DIR__.'/../css/' => resource_path('css').'/vendor/admin_menu/',
-			__DIR__.'/../js/' => resource_path('js').'/vendor/admin_menu/',
+			__DIR__.'/css/' => resource_path('css').'/vendor/admin_menu/',
+			__DIR__.'/js/' => resource_path('js').'/vendor/admin_menu/',
 		], 'assets');
 	}
 

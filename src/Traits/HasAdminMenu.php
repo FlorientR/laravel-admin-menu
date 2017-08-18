@@ -9,8 +9,8 @@ trait HasAdminMenu
 {
 	public function getAdminMenuTemplate($menu = null)
 	{
-		if ($menu != null && !empty($menu['tempalte']))
-			return $menu['tempalte'];
+		if ($menu != null && !empty($menu['template']))
+			return $menu['template'];
 
 		return config('admin_menu.template');
 	}
@@ -36,11 +36,9 @@ trait HasAdminMenu
 				$config = config('admin_menu.actions.'.$actionName);
 
 				if (!empty($config['permissions']) && !$this->canSeeAdminMenu($config['permissions']))
-				{
 					continue;
-				}
 
-				$menu[$actionName] = config('admin_menu.actions.'.$actionName);
+				$menu[$actionName] = $config;
 
 				if (empty($actionParams))
 					$actionParams = [];
@@ -77,8 +75,6 @@ trait HasAdminMenu
 
 		if (!empty($menu[$menuName]))
 			return $menu[$menuName];
-		elseif (!empty($menu['default']))
-			return $menu['default'];
 
 		return [];
 	}
