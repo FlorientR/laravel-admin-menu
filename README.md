@@ -69,16 +69,16 @@ use Florientr\AdminMenu\Traits\HasAdminMenu;
 use HasAdminMenu;
 
 public function adminMenuConfig()
-	{
-		return [
-			'default' => [
-				'edit_item' => [
-					'item' => $this->id
-				],
-				'delete_item' => [
-					'item' => $this->id
-				]
+{
+	return [
+		'default' => [
+			'edit_item' => [
+				'item' => $this->id
+			],
+			'delete_item' => [
+				'item' => $this->id
 			]
-		];
-	}
+		]
+	];
+}
 ```
